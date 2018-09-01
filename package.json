@@ -1,0 +1,44 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "webpack4+ant.mobile",
+  "main": "index.js",
+  "scripts": {
+    "start": "tnpm run dev",
+    "dev": "node index.js"
+  },
+  "author": "aobo",
+  "license": "ISC",
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-import": "^1.8.0",
+    "css-loader": "^1.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-loader": "^3.0.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.0",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.10.0",
+    "tslint-loader": "^3.6.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.0.3",
+    "typings-for-css-modules-loader": "^1.7.0",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "@types/core-js": "^2.5.0",
+    "@types/react": "^16.4.13",
+    "@types/react-dom": "^16.0.7",
+    "antd-mobile": "^2.2.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  }
+}
