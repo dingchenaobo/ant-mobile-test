@@ -11,6 +11,7 @@
 * redux or rxjs ?
 * react-router 4.x
 * ant-mobile
+* build (shake tree)
 
 ## 开发调试
 eruda调试（待环境配置，日常需要）
