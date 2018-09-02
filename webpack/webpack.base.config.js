@@ -55,6 +55,18 @@ module.exports = {
       },
     ]
   },
-  plugins: [
-  ]
+  plugins: [],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /node_modules\//,
+          name: 'vendor',
+          priority: 10,
+          enforce: true
+        },
+      }
+    }
+  }
 };
