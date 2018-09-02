@@ -10,10 +10,10 @@
   "author": "aobo",
   "license": "ISC",
   "devDependencies": {
-    "awesome-typescript-loader": "^5.2.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
-    "babel-plugin-import": "^1.8.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^1.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
@@ -21,8 +21,9 @@
     "less-loader": "^4.1.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^3.0.0",
-    "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.0",
+    "ts-import-plugin": "^1.5.4",
+    "ts-loader": "^4.5.0",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.10.0",
     "tslint-loader": "^3.6.0",
@@ -34,7 +35,6 @@
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
-    "@types/core-js": "^2.5.0",
     "@types/react": "^16.4.13",
     "@types/react-dom": "^16.0.7",
     "antd-mobile": "^2.2.3",

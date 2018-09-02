@@ -1,11 +1,15 @@
 import * as React from 'react';
-import { Button } from 'antd-mobile';
+
+import MyTabBar from '../MyTabBar';
+
+import * as styles from './index.less';
 
 class App extends React.PureComponent {
   public render() {
     return (
       <div>
-        <Button type="primary">Start</Button>
+        <div />
+        <MyTabBar />
       </div>
     );
   }

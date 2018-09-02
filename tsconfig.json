@@ -1,22 +1,17 @@
-// 根本不用写注释 vscode对ts的支持非常好 配置项自动标注
 {
   "compilerOptions": {
-    "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
-    "strictNullChecks": true, // 在严格的null检查模式下，null和undefined值不包含在任何类型里，只允许用它们自己和any来赋值（有个例外，undefined可以赋值到void
-    "module": "commonjs",
+    "strictNullChecks": true,
+    "module": "esnext",
     "target": "es6",
     "jsx": "react",
     "strict": true,
-    "emitDecoratorMetadata": true, // 给源码里的装饰器声明加上设计类型元数据
-    "experimentalDecorators": true, // 启用实验性的ES装饰器
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    // "types": [ // 要包含的类型声明文件名列表；如果指定了types，只有被列出来的包才会被包含进来
-    //   "node",
-    //   "core-js",
-    //   "source-map",
-    // ],
+    "rootDir": "src",
+    "moduleResolution": "node",
   },
   "include": [
     "./src/**/*"
@@ -24,7 +19,5 @@
   "exclude": [
     "node_modules",
     "**/*.spec.ts",
-    "lib",
-    "es"
   ],
 }

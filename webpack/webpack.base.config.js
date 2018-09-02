@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const tsImportPluginFactory = require('ts-import-plugin');
 
 // resource code path
 const SRC_PATH = path.resolve('./src');
@@ -11,7 +12,6 @@ const ASSETS_PUBLIC_PATH = '/assets/';
 module.exports = {
   context: SRC_PATH,
   mode: 'development',
-  devtool: "source-map",
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
   },
@@ -32,19 +32,26 @@ module.exports = {
         loader: 'tslint-loader'
       },
       {
-        test: /\.tsx?$/,
-        use: ['awesome-typescript-loader']
-      },
-      {
-        enforce: "pre",
-        test: /\.js$/,
-        loader:
-        "source-map-loader"
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
+        test: /\.(jsx|tsx|js|ts)$/,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+              getCustomTransformers: () => ({
+                before: [tsImportPluginFactory({
+                  libraryName: 'antd-mobile',
+                  libraryDirectory: 'lib',
+                  style: 'css'
+                })]
+              }),
+              compilerOptions: {
+                module: 'es2015'
+              }
+            },
+          },
+        ],
+        exclude: /node_modules/
       },
     ]
   },
