@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const Cssnano = require('cssnano');
 
 const baseConfig = require('./webpack.base.config');
@@ -40,6 +41,13 @@ baseConfig.plugins.push(
     },
   }),
 );
+
+// analyz
+if (process.env.NODE_ENV === 'analyz') {
+  baseConfig.plugins.push(
+    new BundleAnalyzerPlugin()
+  );
+}
 
 baseConfig.externals = {
   react: 'React',

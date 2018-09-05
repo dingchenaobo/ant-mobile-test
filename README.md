@@ -25,3 +25,13 @@ npm i
 ```bash
 npm start
 ```
+
+打包
+```bash
+npm run build
+```
+
+分析
+```bash
+npm run analyz
+```

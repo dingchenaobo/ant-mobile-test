@@ -4,9 +4,9 @@
   "description": "webpack4+ant.mobile+typescript",
   "scripts": {
     "start": "tnpm run dev",
-    "dev": "webpack-dev-server --config ./webpack/webpack.dev.config.js",
+    "dev": "cross-env webpack-dev-server --config ./webpack/webpack.dev.config.js",
     "build": "webpack --config ./webpack/webpack.build.config.js",
-    "analyz": "webpack --config ./webpack/webpack.analyz.config.js"
+    "analyz": "cross-env NODE_ENV=analyz webpack --config ./webpack/webpack.build.config.js"
   },
   "author": "dingchen",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "cssnano": "^4.1.0",
     "ejs": "^2.6.1",
