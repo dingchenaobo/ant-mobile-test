@@ -9,16 +9,6 @@ baseConfig.mode = 'production';
 
 baseConfig.module.rules.push(
   {
-    test: /\.css$/,
-    use: ExtractTextPlugin.extract({
-      use: [
-        'postcss-loader'
-      ],
-      fallback: 'style-loader'
-    }),
-    include: /node_modules/
-  },
-  {
     test: /\.less$/,
     use: ExtractTextPlugin.extract({
       use: [
@@ -40,11 +30,6 @@ baseConfig.module.rules.push(
 );
 
 baseConfig.plugins.push(
-  new ExtractTextPlugin({
-    filename: '[name].css',
-    allChunks: true,
-    ignoreOrder: true
-  }),
   new OptimizeCssAssetsPlugin({
     canPrint: true,
     cssProcessor: Cssnano,

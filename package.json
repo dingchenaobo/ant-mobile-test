@@ -1,17 +1,17 @@
 {
   "name": "test",
   "version": "1.0.0",
-  "description": "webpack4+ant.mobile",
-  "main": "index.js",
+  "description": "webpack4+ant.mobile+typescript",
   "scripts": {
     "start": "tnpm run dev",
-    "dev": "node index.js",
+    "dev": "webpack-dev-server --config ./webpack/webpack.dev.config.js",
     "build": "webpack --config ./webpack/webpack.build.config.js",
     "analyz": "webpack --config ./webpack/webpack.analyz.config.js"
   },
-  "author": "aobo",
+  "author": "dingchen",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^9.1.5",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
@@ -22,6 +22,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-plugin": "^3.2.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
@@ -47,5 +48,10 @@
     "antd-mobile": "^2.2.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
-  }
+  },
+  "keywords": [
+    "webpack4",
+    "typescript",
+    "ant-design-mobile"
+  ]
 }

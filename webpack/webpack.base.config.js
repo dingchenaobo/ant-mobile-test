@@ -2,13 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 const tsImportPluginFactory = require('ts-import-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // resource code path
 const SRC_PATH = path.resolve('./src');
 // tnpm run build resource path
 const ASSETS_BUILD_PATH = path.resolve('./build');
-// tnpm run dev virtual file path(in memory)
-const ASSETS_PUBLIC_PATH = '/assets/';
 
 module.exports = {
   context: SRC_PATH,
@@ -20,7 +20,6 @@ module.exports = {
   },
   output: {
     path: ASSETS_BUILD_PATH,
-    publicPath: ASSETS_PUBLIC_PATH,
     filename: './[name].js'
   },
   module: {
@@ -52,10 +51,29 @@ module.exports = {
         ],
         exclude: /node_modules/
       },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: [
+            'postcss-loader'
+          ],
+          fallback: 'style-loader'
+        }),
+        include: /node_modules/
+      },
     ]
   },
   plugins: [
     new CleanWebpackPlugin([ASSETS_BUILD_PATH], { verbose: false }),
+    new HtmlWebpackPlugin({
+      title: 'ant-mobile-demo',
+      template: '../index.html',
+    }),
+    new ExtractTextPlugin({
+      filename: '[name].css',
+      allChunks: true,
+      ignoreOrder: true
+    }),
   ],
   optimization: {
     splitChunks: {
@@ -69,5 +87,9 @@ module.exports = {
         },
       }
     }
+  },
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
   }
 };

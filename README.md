@@ -1,17 +1,17 @@
 ## 目标
 完成
 * typescript
-* tslint
+* tslint（airbnb）
 * less
 * css modules
 * 第三方库分离
+* ant-mobile
+* build
 
 未完成
 * service-worker
 * redux or rxjs ?
 * react-router 4.x
-* ant-mobile
-* build (shake tree)
 
 ## 开发调试
 eruda调试（待环境配置，日常需要）

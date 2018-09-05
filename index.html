@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-Hans">
+  <meta charset="UTF-8">
+  <link rel="dns-prefetch" href="//g.alicdn.com">
+  <meta name="viewport" content="user-scalable=0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <title>测试页面</title>
+  <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+	<script>
+		if ('addEventListener' in document) {
+			document.addEventListener('DOMContentLoaded', function() {
+			FastClick.attach(document.body);
+			}, false);
+		}
+		if(!window.Promise) {
+			document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
+		}
+	</script>
+<body>
+  <div id="root"></div>
+
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+  <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.production.min.js"></script>
+
+	<script>eruda.init();</script>
+</html>
