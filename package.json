@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "tnpm run dev",
-    "dev": "node index.js"
+    "dev": "node index.js",
+    "build": "webpack --config ./webpack/webpack.build.config.js",
+    "analyz": "webpack --config ./webpack/webpack.analyz.config.js"
   },
   "author": "aobo",
   "license": "ISC",
@@ -14,11 +16,15 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
+    "cssnano": "^4.1.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.0",
@@ -31,6 +37,7 @@
     "typescript": "^3.0.3",
     "typings-for-css-modules-loader": "^1.7.0",
     "webpack": "^4.17.1",
+    "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5"
   },

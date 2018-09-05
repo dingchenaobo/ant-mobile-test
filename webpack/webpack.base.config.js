@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const tsImportPluginFactory = require('ts-import-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // resource code path
 const SRC_PATH = path.resolve('./src');
@@ -11,7 +12,6 @@ const ASSETS_PUBLIC_PATH = '/assets/';
 
 module.exports = {
   context: SRC_PATH,
-  mode: 'development',
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
   },
@@ -41,8 +41,7 @@ module.exports = {
               getCustomTransformers: () => ({
                 before: [tsImportPluginFactory({
                   libraryName: 'antd-mobile',
-                  libraryDirectory: 'lib',
-                  style: 'css'
+                  style: 'css',
                 })]
               }),
               compilerOptions: {
@@ -55,7 +54,9 @@ module.exports = {
       },
     ]
   },
-  plugins: [],
+  plugins: [
+    new CleanWebpackPlugin([ASSETS_BUILD_PATH], { verbose: false }),
+  ],
   optimization: {
     splitChunks: {
       chunks: 'all',

@@ -1,9 +1,13 @@
 const baseConfig = require('./webpack.base.config');
 
+baseConfig.mode = 'development';
+
 baseConfig.devServer = {
   contentBase: './assets/',
   publicPath: '/assets/'
 };
+
+baseConfig.devtool = 'source-map';
 
 baseConfig.module.rules.push(
   {
@@ -24,6 +28,8 @@ baseConfig.module.rules.push(
           modules: true,
           namedExport: true,
           camelCase: true,
+          minimize: true,
+          localIdentName: "[local]_[hash:base64:5]"
         }
       },
       'postcss-loader',

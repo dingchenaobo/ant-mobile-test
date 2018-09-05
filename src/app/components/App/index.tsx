@@ -1,15 +1,17 @@
-import * as React from 'react';
+import React, { PureComponent } from 'react';
+import { Button, WhiteSpace } from 'antd-mobile';
 
-import MyTabBar from '../MyTabBar';
+import styles from './index.less';
 
-import * as styles from './index.less';
-
-class App extends React.PureComponent {
+class App extends PureComponent {
   public render() {
+    const title = '标题';
+    console.log(title, styles, styles.title);
     return (
       <div>
-        <div />
-        <MyTabBar />
+        <h1 className={styles.title}>测试{title}</h1>
+        <WhiteSpace />
+        <Button type="primary">测试</Button>
       </div>
     );
   }
