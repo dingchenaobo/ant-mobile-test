@@ -68,6 +68,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'ant-mobile-demo',
       template: '../index.html',
+      hash: true,
     }),
     new ExtractTextPlugin({
       filename: '[name].css',
