@@ -14,6 +14,9 @@ module.exports = {
   context: SRC_PATH,
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
+    alias: {
+      '@': SRC_PATH
+    },
   },
   entry: {
     index: ['./app']

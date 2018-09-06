@@ -12,6 +12,10 @@
     "allowSyntheticDefaultImports": true,
     "rootDir": "src",
     "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@": ["./src/*"]
+    },
   },
   "include": [
     "./src/**/*"
