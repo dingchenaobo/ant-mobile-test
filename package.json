@@ -4,7 +4,7 @@
   "description": "webpack4+ant.mobile+typescript",
   "scripts": {
     "start": "tnpm run dev",
-    "dev": "cross-env webpack-dev-server --config ./webpack/webpack.dev.config.js",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --config ./webpack/webpack.dev.config.js",
     "build": "webpack --config ./webpack/webpack.build.config.js",
     "analyz": "cross-env NODE_ENV=analyz webpack --config ./webpack/webpack.build.config.js"
   },

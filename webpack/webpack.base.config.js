@@ -69,6 +69,7 @@ module.exports = {
       title: 'ant-mobile-demo',
       template: '../index.html',
       hash: true,
+      data: process.env.NODE_ENV
     }),
     new ExtractTextPlugin({
       filename: '[name].css',

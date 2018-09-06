@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
   <meta name="format-detection" content="telephone=no"/>
-  <title>测试页面</title>
+  <title><%= htmlWebpackPlugin.options.title %></title>
   <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
 	<script>
 		if ('addEventListener' in document) {
@@ -23,9 +23,16 @@
 <body>
   <div id="root"></div>
 
-  <script src="https://cdn.bootcss.com/eruda/1.4.4/eruda.js"></script>
   <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.production.min.js"></script>
   <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.production.min.js"></script>
-
-	<script>eruda.init();</script>
+  <script>
+    if ('dev' === '<%= htmlWebpackPlugin.options.data %>') {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.bootcss.com/eruda/1.4.4/eruda.js';
+      document.body.appendChild(script);
+      script.onload = function() {
+        eruda.init();
+      }
+    }
+  </script>
 </html>
