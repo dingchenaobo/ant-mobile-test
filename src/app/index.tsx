@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { BrowserRouter as Route } from 'react-router-dom';
 
 import App from './components/App';
 
@@ -8,7 +9,9 @@ import './index.less';
 
 const render = () => {
   ReactDom.render(
-    <App />,
+    <Route>
+      <App />
+    </Route>,
     document.getElementById('root'),
   );
 };

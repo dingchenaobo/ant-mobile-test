@@ -5,7 +5,9 @@
 	],
 	"rules": {
 		"variable-name": false,
-		"import-name": false
+		"import-name": false,
+		"jsx-no-lambda": false,
+		"jsx-no-multiline-js": false
 		// "no-any": true,
 		// "no-empty-interface": true,
 		// "no-reference": true,

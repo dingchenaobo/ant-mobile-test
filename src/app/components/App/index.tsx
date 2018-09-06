@@ -1,20 +1,24 @@
-import React, { PureComponent } from 'react';
-import { Button, WhiteSpace } from 'antd-mobile';
+import React, { PureComponent, ReactNode } from 'react';
+import { Switch, Route, Redirect, withRouter, RouteComponentProps } from 'react-router-dom';
 
-import styles from './index.less';
+import AppHome from '../../../app-home';
+import AppSearch from '../../../app-search';
 
-class App extends PureComponent {
-  public render() {
-    const title = '标题';
-    console.log(title, styles, styles.title);
+interface IMatchParams {}
+interface IAppProps extends RouteComponentProps<IMatchParams> {}
+interface IAppStates {}
+
+class App extends PureComponent<IAppProps, IAppStates> {
+  public render():ReactNode {
     return (
       <div>
-        <h1 className={styles.title}>测试{title}</h1>
-        <WhiteSpace />
-        <Button type="primary">测试</Button>
+        <Switch>
+          <Route exact={true} path="/" component={AppHome} />
+          <Route exact={true} path="/search" component={AppSearch} />
+        </Switch>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

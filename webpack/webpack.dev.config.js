@@ -6,7 +6,7 @@ baseConfig.mode = 'development';
 baseConfig.devServer = {
   port: 4200,
   host: '0.0.0.0',
-  // hot: true,
+  historyApiFallback: true
 };
 
 baseConfig.devtool = 'source-map';
