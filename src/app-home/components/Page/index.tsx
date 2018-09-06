@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import React, { PureComponent, ReactNode } from 'react';
-import { Drawer, NavBar, Icon } from 'antd-mobile';
+import { Drawer, Icon } from 'antd-mobile';
 
 import Avatar from '../../../app/components/Avatar';
+import Navbar from '../Navbar';
 import Carousel from '../Carousel';
 import Menu from '../Menu';
 
@@ -24,10 +25,9 @@ class AppHome extends PureComponent<IAppHomeProps, IAppHomeStates> {
     this.setState({ docked: !docked });
   }
 
-  renderNavBar(): ReactNode {
+  renderNavbar(): ReactNode {
     return (
-      <NavBar
-        className={styles.navbar}
+      <Navbar
         rightContent={[
           <Link key={0} to="/search">
             <Icon type="search" className={styles.search} />
@@ -78,7 +78,7 @@ class AppHome extends PureComponent<IAppHomeProps, IAppHomeStates> {
   render(): ReactNode {
     return (
       <div>
-        {this.renderNavBar()}
+        {this.renderNavbar()}
         {this.renderDrawer()}
       </div>
     );
