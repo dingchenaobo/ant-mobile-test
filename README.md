@@ -7,11 +7,11 @@
 * 第三方库分离
 * ant-mobile
 * build
+* react-router 4.x
 
 未完成
 * service-worker
 * redux or rxjs ?
-* react-router 4.x
 
 ## 开发调试
 eruda调试（待环境配置，日常需要）

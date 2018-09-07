@@ -16,7 +16,16 @@ interface IAppHomeStates {
   docked: boolean;
 }
 
-api.getUserList();
+const test = async () => {
+  try {
+    const res = await api.getUserList({ a: 1, b: 2 });
+    console.log('success', res);
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
+test();
 
 class AppHome extends PureComponent<IAppHomeProps, IAppHomeStates> {
   state = {
