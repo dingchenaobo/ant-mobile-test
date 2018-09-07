@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import React, { PureComponent, ReactNode } from 'react';
 import { Drawer, Icon } from 'antd-mobile';
 
+import api from '../../../app/api';
 import Avatar from '../../../app/components/Avatar';
 import Navbar from '../Navbar';
 import Carousel from '../Carousel';
@@ -14,6 +15,8 @@ interface IAppHomeProps { }
 interface IAppHomeStates {
   docked: boolean;
 }
+
+api.getUserList();
 
 class AppHome extends PureComponent<IAppHomeProps, IAppHomeStates> {
   state = {
