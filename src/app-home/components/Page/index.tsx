@@ -1,8 +1,10 @@
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import React, { PureComponent, ReactNode } from 'react';
 import { Drawer, Icon } from 'antd-mobile';
 
-import api from '../../../app/api';
+import { connect } from '../../index';
+import actions from '../../actions';
 import Avatar from '../../../app/components/Avatar';
 import Navbar from '../Navbar';
 import Carousel from '../Carousel';
@@ -10,34 +12,39 @@ import Menu from '../Menu';
 
 import styles from './index.less';
 
-interface IAppHomeProps { }
+interface IAppHomeProps {
+  actions: {
+    test: Function;
+  };
+}
 
 interface IAppHomeStates {
   docked: boolean;
 }
 
-const test = async () => {
-  try {
-    const res = await api.getUserList({ a: 1, b: 2 });
-    console.log('success', res);
-  } catch (error) {
-    console.error(error.message);
-  }
-};
-
-test();
-
 class AppHome extends PureComponent<IAppHomeProps, IAppHomeStates> {
-  state = {
+  public state = {
     docked: false,
   };
 
-  onDock(): void {
+  public componentDidMount() {
+    this.loadData();
+  }
+
+  // test request
+  private async loadData() {
+    const {
+      test,
+    } = this.props.actions;
+    test();
+  }
+
+  public onDock(): void {
     const { docked } = this.state;
     this.setState({ docked: !docked });
   }
 
-  renderNavbar(): ReactNode {
+  public renderNavbar(): ReactNode {
     return (
       <Navbar
         rightContent={[
@@ -50,7 +57,7 @@ class AppHome extends PureComponent<IAppHomeProps, IAppHomeStates> {
     );
   }
 
-  renderDrawer(): ReactNode {
+  public renderDrawer(): ReactNode {
     const { docked } = this.state;
     return (
       <Drawer
@@ -67,7 +74,7 @@ class AppHome extends PureComponent<IAppHomeProps, IAppHomeStates> {
   }
 
   // 内容
-  renderContent(): ReactNode {
+  public renderContent(): ReactNode {
     const data = [
       {
         id: 0,
@@ -87,7 +94,7 @@ class AppHome extends PureComponent<IAppHomeProps, IAppHomeStates> {
     );
   }
 
-  render(): ReactNode {
+  public render(): ReactNode {
     return (
       <div>
         {this.renderNavbar()}
@@ -97,4 +104,7 @@ class AppHome extends PureComponent<IAppHomeProps, IAppHomeStates> {
   }
 }
 
-export default AppHome;
+export default connect(
+  (state: any) => ({ ...state }),
+  (dispatch: any) => ({ actions: bindActionCreators(actions, dispatch) }),
+)(AppHome);
