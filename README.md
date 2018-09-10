@@ -1,3 +1,8 @@
+![hahahah](https://user-gold-cdn.xitu.io/2018/9/7/165b316898ea7d6f?w=690&h=739&f=jpeg&s=44844)
+
+
+
+
 ## 目标
 完成
 * typescript
