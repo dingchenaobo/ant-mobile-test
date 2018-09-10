@@ -37,7 +37,8 @@ baseConfig.module.rules.push(
             localIdentName: "[local]_[hash:base64:5]"
           }
         },
-        'postcss-loader'
+        'postcss-loader',
+        'less-loader'
       ],
       fallback: 'style-loader'
     }),
