@@ -5,8 +5,10 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --config ./webpack/webpack.dev.config.js",
+    "mock": "cross-env NODE_ENV=mock webpack-dev-server --config ./webpack/webpack.dev.config.js",
     "build": "webpack --config ./webpack/webpack.build.config.js",
-    "analyz": "cross-env NODE_ENV=analyz webpack --config ./webpack/webpack.build.config.js"
+    "analyz": "cross-env NODE_ENV=analyz webpack --config ./webpack/webpack.build.config.js",
+    "server": "nodemon ./server/index.js"
   },
   "author": "dingchen",
   "license": "ISC",
@@ -23,9 +25,12 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "faker": "^4.1.0",
     "html-webpack-plugin": "^3.2.0",
+    "json-server": "^0.14.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
+    "lodash": "^4.17.10",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^3.0.0",

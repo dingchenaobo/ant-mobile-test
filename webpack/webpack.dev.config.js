@@ -9,6 +9,17 @@ baseConfig.devServer = {
   historyApiFallback: true
 };
 
+if (process.env.NODE_ENV === 'mock') {
+  baseConfig.devServer.proxy = {
+    '/api': {
+      pathRewrite: {'^/api': ''},
+      target: 'http://localhost:4201',
+      changeOrigin: true, // 跨域
+      secure: false // accept ssl
+    }
+  };
+}
+
 baseConfig.devtool = 'source-map';
 
 baseConfig.module.rules.push(

@@ -6,7 +6,7 @@ export interface IApiMethod {
 
 export default {
   getUserList: {
-    url: 'https://raw.githubusercontent.com/AandK/mock_web_json/master/1.json',
+    url: '/user',
     method: 'get',
   },
 };

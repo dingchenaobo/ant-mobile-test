@@ -58,7 +58,7 @@ const createMethod = (axiosRequestConfig: AxiosRequestConfig): Function => {
 const createInstance = (config: AxiosRequestConfig = {}): AxiosInstance => {
   const _config = {
     withCredentials: true, // cookie 跨域
-    baseURL: '',
+    baseURL: '/api',
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
     },
