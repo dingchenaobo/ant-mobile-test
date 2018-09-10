@@ -4,6 +4,7 @@ import meta from './meta';
 
 export { default } from './components/Page';
 export { default as meta } from './meta';
+export { default as reducer } from './reducers';
 
 export function connect(
   mapStateToProps = (state: any) => ({}),
