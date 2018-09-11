@@ -35,11 +35,11 @@ baseConfig.module.rules.push(
             namedExport: true,
             camelCase: true,
             minimize: true,
-            localIdentName: "[local]_[hash:base64:5]"
+            localIdentName: "[path][local]_[hash:base64:4]"
           }
         },
         'postcss-loader',
-        'less-loader'
+        'less-loader',
       ],
       fallback: 'style-loader'
     }),

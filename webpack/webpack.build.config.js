@@ -24,7 +24,7 @@ baseConfig.module.rules.push(
           }
         },
         'postcss-loader',
-        'less-loader'
+        'less-loader',
       ],
       fallback: 'style-loader'
     }),
