@@ -45,3 +45,5 @@ npm run build
 ```bash
 npm run analyz
 ```
+
+> http://localhost:4200/
