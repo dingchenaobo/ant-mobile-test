@@ -1,15 +1,27 @@
-import React from 'react';
-import ReactDom from 'react-dom';
 import { BrowserRouter as Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import OfflinePluginRuntime from 'offline-plugin/runtime';
+import React from 'react';
+import ReactDom from 'react-dom';
 
-import configStore from './store';
+import { swUtils } from '@/app/utils';
+import appConfig from '@/app/config';
 import App from './components/App';
+import configStore from './store';
 
-import 'antd-mobile/dist/antd-mobile.css';
 import './index.less';
 
 const store = configStore();
+
+/**
+ * OfflinePlugin config
+ */
+const { unregisterServiceWorker, registerRuntime } = swUtils;
+const { unregisterSW } = appConfig;
+registerRuntime();
+unregisterSW && unregisterServiceWorker();
+
+console.log(2);
 
 const render = () => {
   ReactDom.render(

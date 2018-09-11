@@ -15,7 +15,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
-      '@': SRC_PATH
+      '@': SRC_PATH,
     },
   },
   entry: {
