@@ -16,3 +16,11 @@ node_modules/
 
 # Optional eslint cache
 .eslintcache
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

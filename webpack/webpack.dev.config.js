@@ -1,6 +1,6 @@
 const baseConfig = require('./webpack.base.config');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const OfflinePlugin = require('offline-plugin');
+const OfflinePlugin = require('offline-plugin'); // 可以把我们的多页面应用进行缓存
 
 baseConfig.mode = 'development';
 

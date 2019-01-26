@@ -9,7 +9,7 @@ interface IinitialState {
 const initialState: IinitialState = {
   test: null,
 };
-
+console.log(actions,actions.test)
 export default handleActions({
   [actions.test](state: IinitialState, { error, payload }) {
     if (!error) {

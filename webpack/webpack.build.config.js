@@ -1,7 +1,7 @@
 const webpack = require('webpack');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // 压缩 css， 和cssnano配合使用
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // 打包文件分析工具
 const Cssnano = require('cssnano');
 const OfflinePlugin = require('offline-plugin');
 

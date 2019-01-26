@@ -1,9 +1,9 @@
-const faker = require('faker');
+const faker = require('faker'); //模拟数据
 const _ = require('lodash');
 
 module.exports = function() {
   return {
-    user: _.times(10, () => {
+    user: _.times(10, () => { // 循环10次
       return {
         id: faker.random.uuid(),
         name: faker.name.findName(),
